@@ -1,0 +1,48 @@
+    <!-- include  the head for page -->
+    <%- include('layout/head'); -%>
+    <a href="#" id="welcome">Welcome Admin!</a>
+<body>
+     <!-- include the header for page -->   
+    <%- include('layout/header'); -%>
+     <!-- include the Sub Navigation menu for page after login -->   
+    <%- include('layout/subNav'); -%> 
+    <main>
+        <!-- heading of the page -->
+        <h2>Add Page</h2><br>
+        <!-- display error messages -->
+        <p id="errors">
+        <% if(typeof(er) !== 'undefined') {
+            for(var error of er){
+            %>
+            <%= error.msg %><br>
+            <%
+            }
+        }
+        %>
+        </p>
+        <!-- form to retrieve title, image and article from the database -->
+        <form action="" method="POST" enctype="multipart/form-data">
+            <label>Page Title</label>
+            <input type="text" id="title" name="title"><br>
+            <label>Image</label>
+            <input type="file" id="imageFile" name="imageFile">
+            <input type="text" id="article" name="article">
+            <input type="submit" value="Submit">
+        </form>
+    </main>
+    <!-- scripts to get the tinymce from /public/js folder  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/tinymce/jquery.tinymce.min.js"></script>
+    <script src="/js/tinymce/tinymce.min.js"></script>
+    <!-- script to define and customise tinymce -->
+    <script>
+    tinymce.init({
+        selector: '#article',
+        toolbar: ' bold italic underline | undo redo | styleselect | alignleft aligncenter alignright alignjustify | fontsizeselect | fontselect',
+        height: 500,
+        menubar: false
+    });
+    </script>
+</body>
+<!-- include the footer of the page -->
+<%- include('layout/footer'); -%>

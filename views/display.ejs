@@ -1,0 +1,22 @@
+<!-- including the heading -->
+<%- include('layout/head'); -%>
+<!-- link for the login page -->
+<a href="/login" id="login">Admin Login</a>
+<body>
+    <!-- including the header -->
+    <%- include('layout/header'); -%>
+        <!-- including the main page navigation menu -->
+    <%- include('layout/homeNav'); -%>
+    <main>
+        <!-- retreive image for the pageid -->
+        <img src="/images/<%= fileName %>" alt="Image" width="400">
+        <section>
+                <!-- retrieve the page title -->
+                <h2><%= title %></h2>
+                <!-- retrieve the article -->
+                <p><%- article %></p>
+        </section>
+    </main>
+</body>
+<!-- including the footer -->
+<%- include('layout/footer'); -%>

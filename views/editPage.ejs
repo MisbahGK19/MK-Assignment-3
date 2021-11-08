@@ -1,0 +1,34 @@
+    <!-- include  the head for page -->
+    <%- include('layout/head'); -%>
+    <a href="#" id="welcome">Welcome Admin!</a>
+<body>
+     <!-- include the header for page -->   
+    <%- include('layout/header'); -%>
+     <!-- include the Sub Navigation menu for page after login -->   
+    <%- include('layout/subNav'); -%> 
+    <main>
+        <!-- heading of the page -->
+        <h2>Edit Pages</h2>
+        <!-- table to display the pages available for edit and delete -->
+        <table>
+            <thead>
+                <th>Pages</th>
+            </thead>
+            <tbody>
+                    <%
+                    for(var page of pages){
+                        %>
+                        <tr>
+                            <td id="field"><%= page.title %><br></td>
+                            <td><a href="/editingPage/<%= page._id %>">Edit</a><br></td>
+                            <td><a href="/delete/<%= page._id %>">Delete</a><br></td>
+                        <%
+                    }
+                    %>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+<!-- including the footer -->
+<%- include('layout/footer'); -%>

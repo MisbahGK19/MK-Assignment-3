@@ -1,0 +1,12 @@
+<!-- navigation menu for main pages -->
+<nav id="nav_menu">
+    <ul>
+        <%
+        for(var page of pages){
+            %>
+            <li><a href="<%= page._id %>"><%= page.title %></a></li>
+            <%
+        }
+        %>
+    </ul>
+</nav>

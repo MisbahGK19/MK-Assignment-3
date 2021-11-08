@@ -1,0 +1,38 @@
+<!-- including the heading -->
+<%- include('layout/head'); -%>
+<body>
+    <!-- including the header -->
+    <%- include('layout/header'); -%>
+        <!-- including the main page navigation menu -->
+    <%- include('layout/homeNav'); -%>
+    <main>
+        <!-- form to accept the login detials -->
+        <form action="" method="POST">
+            <h2>Login</h2><br>
+            <!-- display error message -->
+            <p id="errors">
+                <%
+                    if(typeof error !== 'undefined'){
+                        %>
+                        <%= error %>
+                        <%
+                    }
+                %>
+            </p>
+            <!-- label and input for username -->
+            <div class="usernameField">
+                <label for="username">Username : </label>
+                <input id="username" name="username" type="text">
+            </div>
+            <!-- label and input for password -->
+            <div class="passwordField">
+                <label for="password">Password : </label>
+                <input type="password" id="password" name="password">
+            </div>
+            <!-- input submit for the form -->
+            <input type="submit" value="Login" id="submit">
+        </form>
+    </main>
+</body>
+<!-- included the footer -->
+<%- include('layout/footer'); -%>
